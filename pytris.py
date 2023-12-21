@@ -3,18 +3,15 @@ import random
 
 pygame.font.init()
 
-# GLOBALS VARS
+# globals
 s_width = 800
 s_height = 700
-play_width = 300  # meaning 300 // 10 = 30 width per block
-play_height = 600  # meaning 600 // 20 = 30 height per block
+play_width = 300  # 300 / 10 = 30 width per block
+play_height = 600  # 600 / 20 = 30 height per block
 block_size = 30
 
 top_left_x = (s_width - play_width) // 2
 top_left_y = s_height - play_height
-
-
-# SHAPE FORMATS
 
 S = [['.....',
       '.....',
@@ -123,7 +120,7 @@ shape_colors = [(0, 255, 0), (255, 0, 0), (0, 255, 255), (255, 255, 0), (255, 16
 # index 0 - 6 represent shape
 
 
-class Piece(object):  # *
+class Piece(object):  
     def __init__(self, x, y, shape):
         self.x = x
         self.y = y
@@ -132,7 +129,7 @@ class Piece(object):  # *
         self.rotation = 0
 
 
-def create_grid(locked_pos={}):  # *
+def create_grid(locked_pos={}):  
     grid = [[(0,0,0) for _ in range(10)] for _ in range(20)]
 
     for i in range(len(grid)):
@@ -296,7 +293,7 @@ def draw_window(surface, grid, score=0, last_score = 0):
     #pygame.display.update()
 
 
-def main(win):  # *
+def main(win):  
     last_score = max_score()
     locked_positions = {}
     grid = create_grid(locked_positions)
@@ -380,7 +377,7 @@ def main(win):  # *
             update_score(score)
 
 
-def main_menu(win):  # *
+def main_menu(win):  
     run = True
     while run:
         win.fill((0,0,0))
